@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://MainMenu.tscn"
 boot_splash/image="res://sprites/player/Player-idle.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"

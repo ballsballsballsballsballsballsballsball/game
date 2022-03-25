@@ -57,9 +57,11 @@ func victory(body):
 	var nextLvl = dir.file_exists("res://levels/Level" + str(int(currentscene[-1]) + 1) + '.tscn')
 	if not nextLvl:
 		var btn = $"Victory text/CenterContainer/Button"
-		btn.disabled = true
-		btn.text = "THERE IS NO NEXT LEVEL!?!?!?"
+		btn.connect("pressed", self, "_main_menu")
+		btn.text = "Main Menu"
 
+func _main_menu():
+	get_tree().change_scene("res://MainMenu.tscn")
 
 func loss():
 	explosion.show()
