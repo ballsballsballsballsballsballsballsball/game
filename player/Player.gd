@@ -18,7 +18,7 @@ func _physics_process(delta):
 		move_and_slide(motion.normalized() * movement_speed, Vector2())
 		for i in get_slide_count():
 			var collision = get_slide_collision(i)
-			if collision.collider.name == "Enemy":
+			if "Enemy" in collision.collider.name:
 				loss()
 	
 func update_animation(motion: Vector2):
