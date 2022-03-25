@@ -26,6 +26,11 @@ boot_splash/image="res://sprites/player/Player-idle.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
