@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://LevelCamera/LevelCamera.gd" type="Script" id=1]
+
+[node name="LevelCamera" type="Camera2D"]
+current = true
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -252.0
+margin_top = -143.0
+margin_right = -166.0
+margin_bottom = -123.0
+text = "Close game"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = -164.0
+margin_top = -82.0
+margin_right = 46.0
+margin_bottom = -12.0
+window_title = "Confirm"
+dialog_text = "Are you sure you want to quit?"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
