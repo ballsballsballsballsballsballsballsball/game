@@ -6,10 +6,11 @@ onready var loss_text : RichTextLabel = $LossText
 onready var explosion : Particles2D = $Explosion
 var explosionSound = preload("res://explosion/explosion.wav")
 
-export var movement_speed = 250.0
-
 func _physics_process(delta):
 	if not victory_text.visible and not loss_text.visible:
+		var movement_speed = 250.0
+		if Input.is_action_pressed("ctrl"):
+			movement_speed = 55.0
 		var motion : = Vector2()
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
