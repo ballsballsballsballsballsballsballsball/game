@@ -14,10 +14,10 @@ margin_bottom = -123.0
 text = "Close game"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-margin_left = -164.0
-margin_top = -82.0
-margin_right = 46.0
-margin_bottom = -12.0
+margin_left = 299.0
+margin_top = 227.0
+margin_right = 509.0
+margin_bottom = 297.0
 window_title = "Confirm"
 dialog_text = "Are you sure you want to quit?"
 
