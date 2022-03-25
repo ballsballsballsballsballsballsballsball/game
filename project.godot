@@ -24,7 +24,7 @@ config/name="Game"
 run/main_scene="res://MainMenu.tscn"
 boot_splash/image="res://sprites/player/Player-idle.png"
 boot_splash/use_filter=false
-config/icon="res://icon.png"
+config/icon="res://sprites/player/Player-idle.png"
 
 [display]
 
