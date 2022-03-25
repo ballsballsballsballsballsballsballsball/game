@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 
+
 export var movement_speed = 250.0
 
 func _physics_process(delta):
@@ -25,3 +26,7 @@ func update_animation(motion: Vector2):
 		
 	if animated_sprite.animation != animation:
 		animated_sprite.play(animation)
+
+
+func _on_Goal_body_entered(body):
+	print('hi')
