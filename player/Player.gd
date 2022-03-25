@@ -38,8 +38,15 @@ func _on_Goal_body_entered(body):
 	$AudioStreamPlayer2D.play()
 	animated_sprite.play('idle')
 	$"Victory text".show()
-
+	var dir = Directory.new()
+	var currentscene = get_parent().name
+	var nextLvl = dir.file_exists("res://levels/Level" + str(int(currentscene[-1]) + 1) + '.tscn')
+	if not nextLvl:
+		var btn = $"Victory text/CenterContainer/Button"
+		btn.disabled = true
+		btn.text = "THERE IS NO NEXT LEVEL!?!?!?"
 
 
 func _on_Button_pressed():
-	get_tree().reload_current_scene()
+	var currentscene = get_parent().name
+	get_tree().change_scene("res://levels/Level" + str(int(currentscene[-1]) + 1) + '.tscn')
