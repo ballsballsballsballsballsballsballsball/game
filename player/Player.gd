@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 onready var victory_text : RichTextLabel = $"Victory text"
 onready var explosion : Particles2D = $Explosion
+var explosionSound = preload("res://explosion/explosion.wav")
 
 export var movement_speed = 250.0
 
@@ -33,5 +34,7 @@ func update_animation(motion: Vector2):
 func _on_Goal_body_entered(body):
 	explosion.show()
 	explosion.emitting = true
+	$AudioStreamPlayer2D.stream = explosionSound
+	$AudioStreamPlayer2D.play()
 	animated_sprite.play('idle')
 	$"Victory text".show()
