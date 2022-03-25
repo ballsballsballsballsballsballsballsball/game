@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="Game"
 run/main_scene="res://Game.tscn"
 boot_splash/image="res://sprites/player/Player-idle.png"
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [gdnative]
