@@ -61,4 +61,13 @@ margin_top = -62.0
 margin_right = 602.5
 margin_bottom = 270.0
 
+[node name="Button" type="Button" parent="Victory text"]
+margin_left = 121.0
+margin_top = 101.0
+margin_right = 211.0
+margin_bottom = 121.0
+text = "Replay!!!!!!!!!"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="Victory text/Button" to="." method="_on_Button_pressed"]

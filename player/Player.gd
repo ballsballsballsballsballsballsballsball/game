@@ -38,3 +38,8 @@ func _on_Goal_body_entered(body):
 	$AudioStreamPlayer2D.play()
 	animated_sprite.play('idle')
 	$"Victory text".show()
+
+
+
+func _on_Button_pressed():
+	get_tree().reload_current_scene()
