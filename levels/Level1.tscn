@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/tilemap.png" type="Texture" id=2]
 [ext_resource path="res://goal/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://VictoryMsg.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -63,11 +62,4 @@ position = Vector2( 363, 295 )
 scale = Vector2( 0.5, 0.5 )
 current = true
 
-[node name="Victory text" parent="Player/Camera2D" instance=ExtResource( 4 )]
-margin_left = -338.0
-margin_top = -113.0
-margin_right = 439.0
-margin_bottom = 219.0
-
 [connection signal="body_entered" from="Goal" to="Player" method="_on_Goal_body_entered"]
-[connection signal="body_entered" from="Goal" to="Player/Camera2D/Victory text" method="_on_Goal_body_entered"]

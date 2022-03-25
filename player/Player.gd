@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
-
+onready var victory_text : RichTextLabel = $"Victory text"
 
 export var movement_speed = 250.0
 
@@ -29,4 +29,4 @@ func update_animation(motion: Vector2):
 
 
 func _on_Goal_body_entered(body):
-	print('hi')
+	$"Victory text".show()
