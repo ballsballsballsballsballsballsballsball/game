@@ -14,7 +14,6 @@ margin_bottom = -123.0
 text = "Close game"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-visible = true
 margin_left = -164.0
 margin_top = -82.0
 margin_right = 46.0
