@@ -2,7 +2,7 @@ extends Control
 
 onready var popup = $PopupMenu
 
-onready var version : String = '1.0.0-alpha.9'
+onready var version : String = '1.0.0-alpha.10'
 onready var github : String = 'https://github.com/ballsballsballsballsballsballsballsball/game'
 
 func _on_StartButton_pressed():
