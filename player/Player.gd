@@ -10,9 +10,9 @@ var pushing = false
 var diag = false
 
 func _ready():
-	pass
-	#if not OS.window_fullscreen:
-	#	OS.window_fullscreen = true
+	if OS.get_name() == "HTML5":
+		if not OS.window_fullscreen:
+			OS.window_fullscreen = true
 
 func _physics_process(delta):
 	if not victory_text.visible and not loss_text.visible:
