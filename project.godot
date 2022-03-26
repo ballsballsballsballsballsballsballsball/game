@@ -17,6 +17,7 @@ boot_splash/use_filter=false
 [display]
 
 window/size/fullscreen=true
+mouse_cursor/custom_image="res://sprites/cursor.png"
 window/stretch/mode="viewport"
 
 [gdnative]
