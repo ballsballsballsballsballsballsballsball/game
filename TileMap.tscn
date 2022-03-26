@@ -6,7 +6,7 @@
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=1]
-0/name = "tilemap.png 0"
+0/name = "floor"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -20,7 +20,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "tilemap.png 1"
+1/name = "wall"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )

@@ -5,23 +5,40 @@ onready var victory_text : RichTextLabel = $"Victory text"
 onready var loss_text : RichTextLabel = $LossText
 onready var explosion : Particles2D = $Explosion
 var explosionSound = preload("res://explosion/explosion.wav")
+var pushing = false
 
+var diag = false
 func _physics_process(delta):
 	if not victory_text.visible and not loss_text.visible:
 		var movement_speed = 250.0
+		var push_speed = 150.0
 		if Input.is_action_pressed("ctrl"):
 			movement_speed = 55.0
 		var motion : = Vector2()
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		
+		# this took way too long wtf???
+		if pushing and not motion.y:
+			diag = false
+		if pushing and motion.x and not diag:
+			motion.y = 0
+		if pushing and motion.y:
+			diag = true
+			motion.x = 0
+			
 		update_animation(motion)
 		move_and_slide(motion.normalized() * movement_speed, Vector2())
-		for i in get_slide_count():
+		var slide_count = get_slide_count()
+		if not slide_count:
+			pushing = false
+		for i in slide_count:
 			var collision = get_slide_collision(i)
 			if "Enemy" in collision.collider.name:
 				loss()
-	
+			if "Crate" in collision.collider.name:
+				pushing = true
+				collision.collider.move_and_slide(motion.normalized() * push_speed, Vector2())
 func update_animation(motion: Vector2):
 	var animation = 'idle'
 	if motion.x > 0:
@@ -38,7 +55,8 @@ func update_animation(motion: Vector2):
 
 
 func _on_Goal_body_entered(body):
-	victory(body)
+	if body.get_name() == "Player":
+		victory(body)
 
 func _on_Button_pressed():
 	var currentscene = get_parent().name

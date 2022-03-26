@@ -31,7 +31,8 @@ func dir_contents(path):
 			if dir.current_is_dir():
 				pass
 			else:
-				files.append(file_name)
+				if file_name.ends_with('tscn'):
+					files.append(file_name)
 			file_name = dir.get_next()
 	return files
 
