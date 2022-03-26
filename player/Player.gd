@@ -8,6 +8,11 @@ var explosionSound = preload("res://explosion/explosion.wav")
 var pushing = false
 
 var diag = false
+
+func _ready():
+	if not OS.window_fullscreen:
+		OS.window_fullscreen = true
+
 func _physics_process(delta):
 	if not victory_text.visible and not loss_text.visible:
 		var movement_speed = 250.0
