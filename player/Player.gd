@@ -10,8 +10,9 @@ var pushing = false
 var diag = false
 
 func _ready():
-	if not OS.window_fullscreen:
-		OS.window_fullscreen = true
+	pass
+	#if not OS.window_fullscreen:
+	#	OS.window_fullscreen = true
 
 func _physics_process(delta):
 	if not victory_text.visible and not loss_text.visible:
@@ -46,7 +47,15 @@ func _physics_process(delta):
 				collision.collider.move_and_slide(motion.normalized() * push_speed, Vector2())
 func update_animation(motion: Vector2):
 	var animation = 'idle'
-	if motion.x > 0:
+	if motion.y > 0 and motion.x > 0:
+		animation = 'se'
+	elif motion.y > 0 and motion.x < 0:
+		animation = 'sw'
+	elif motion.y < 0 and motion.x < 0:
+		animation = 'nw'
+	elif motion.y < 0 and motion.x > 0:
+		animation = 'ne'
+	elif motion.x > 0:
 		animation = 'right'
 	elif motion.x < 0:
 		animation = 'left'

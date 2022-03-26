@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://sprites/player/Player-down1.png" type="Texture" id=1]
 [ext_resource path="res://sprites/player/Player-idle1.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://sprites/player/Player-dead2.png" type="Texture" id=11]
 [ext_resource path="res://sprites/player/Player-win1.png" type="Texture" id=12]
 [ext_resource path="res://sprites/player/Player-win2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/player/Player-sw1.png" type="Texture" id=14]
+[ext_resource path="res://sprites/player/Player-nw1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/Player-se1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player/Player-ne1.png" type="Texture" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,6 +54,26 @@ animations = [ {
 "loop": true,
 "name": "win",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "se",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "nw",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "sw",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "ne",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
