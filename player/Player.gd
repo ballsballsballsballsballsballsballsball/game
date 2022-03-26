@@ -68,7 +68,7 @@ func victory(body):
 	explosion.emitting = true
 	$AudioStreamPlayer2D.stream = explosionSound
 	$AudioStreamPlayer2D.play()
-	animated_sprite.play('idle')
+	animated_sprite.play('win')
 	$"Victory text".show()
 	var dir = Directory.new()
 	var currentscene = get_parent().name
@@ -86,7 +86,7 @@ func loss():
 	explosion.emitting = true
 	$AudioStreamPlayer2D.stream = explosionSound
 	$AudioStreamPlayer2D.play()
-	animated_sprite.play('idle')
+	animated_sprite.play('dead')
 	$LossText.show()
 
 func _on_RetryButton_pressed():
