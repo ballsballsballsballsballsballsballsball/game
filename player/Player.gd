@@ -42,7 +42,7 @@ func _physics_process(delta):
 			var collision = get_slide_collision(i)
 			if "Enemy" in collision.collider.name:
 				loss()
-			if "Crate" in collision.collider.name:
+			elif "Crate" in collision.collider.name:
 				pushing = true
 				collision.collider.move_and_slide(motion.normalized() * push_speed, Vector2())
 func update_animation(motion: Vector2):

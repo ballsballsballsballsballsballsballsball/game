@@ -21,7 +21,6 @@ text = "Close game"
 margin_left = 90.0
 margin_right = 170.0
 margin_bottom = 40.0
-disabled = true
 text = "Save game"
 
 [node name="MainMenuButton" type="Button" parent="HBoxContainer"]
@@ -31,4 +30,5 @@ margin_bottom = 40.0
 text = "Main Menu"
 
 [connection signal="pressed" from="HBoxContainer/CloseButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

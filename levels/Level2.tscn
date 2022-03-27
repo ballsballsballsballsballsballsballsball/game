@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.75, 119.5 )
 
-[node name="Level2" type="Node2D"]
+[node name="Level2" type="Node2D" groups=["Persist"]]
 script = ExtResource( 6 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]

@@ -2,7 +2,7 @@ extends Control
 
 onready var popup = $PopupMenu
 
-onready var version : String = '1.0.0-alpha.13'
+onready var version : String = '1.0.0-alpha.14'
 onready var github : String = 'https://github.com/ballsballsballsballsballsballsballsball/game'
 
 func _on_StartButton_pressed():
@@ -14,7 +14,10 @@ func _ready():
 		$VBoxContainer/DevButton.visible = true
 		
 	var lvls = dir_contents("res://levels")
-	
+	var save = File.new()
+	var save_exists = save.file_exists("user://game.save")
+	if save_exists:
+		$VBoxContainer/LoadButton.disabled = false
 	for lvl in lvls:
 		var lvlName = lvl.split('.tscn')[0]
 		var lvlId = lvlName[-1]
@@ -50,3 +53,15 @@ func _on_PopupMenu_id_pressed(id):
 
 func _on_GHButton_pressed():
 	OS.shell_open(github)
+
+
+func _on_LoadButton_pressed():
+	load_game()
+	
+func load_game():
+	var save_game = File.new()
+	if not save_game.file_exists("user://game.save"):
+		return
+	save_game.open_encrypted_with_pass("user://game.save", File.READ, OS.get_unique_id())
+	var level = parse_json(save_game.get_line())
+	get_tree().change_scene("res://levels/" + level['level'] + ".tscn")

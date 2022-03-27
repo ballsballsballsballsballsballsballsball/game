@@ -6,7 +6,7 @@
 [ext_resource path="res://LevelCamera/LevelCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://arrow/Arrow.tscn" type="PackedScene" id=5]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" groups=["Persist"]]
 position = Vector2( 8, -26 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
